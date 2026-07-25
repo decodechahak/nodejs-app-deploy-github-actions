@@ -10,9 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -name: Checkout Code
-      uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      -name: Trigger Render DEploy
-      run:
-        curl "${{secrets.RENDER_DEPLOY_HOOK_URL }}"
+      - name: Trigger Render Deploy
+        run: curl "${{secrets.RENDER_DEPLOY_HOOK_URL }}"
